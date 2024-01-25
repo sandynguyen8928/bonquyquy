@@ -4,6 +4,7 @@ import { createRoot } from "react-dom/client";
 import { RecoilRoot } from "recoil";
 import Root from "Root";
 import { client } from "utils/apollo";
+import "./global.scss";
 
 createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
