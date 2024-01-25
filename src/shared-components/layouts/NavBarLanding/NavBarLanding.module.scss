@@ -1,0 +1,28 @@
+.navbar-styled {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 30px;
+    position: fixed;
+    width: 100vw;
+
+}
+
+.nav-item {
+    color: #D9D9D9;
+    font-family: "Times New Roman", serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+a:visited {
+    color: #D9D9D9;
+}
+
+.nav-section {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
