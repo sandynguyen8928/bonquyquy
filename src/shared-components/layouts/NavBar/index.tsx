@@ -23,7 +23,12 @@ const NavBar = () => {
           ABOUT
         </div>
       </div>
-      <img src={logo} className={styles["navbar-logo"]} alt="bonquyquy logo" />
+      <img
+        src={logo}
+        className={styles["navbar-logo"]}
+        alt="bonquyquy logo"
+        onClick={() => navigateTo("/")}
+      />
       <div className={styles["nav-right"]}>
         <div className={styles["nav-item"]}>
           <a href="https://www.instagram.com/bon_quyquy/" target="_blank" rel="noopener noreferrer">

@@ -1,8 +1,13 @@
 .landing-styled {
-    background: black;
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
+    background-image: url("../../assets/landing_background.png");
+    min-height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    flex: auto;
 }
 
 .landing-logo {
