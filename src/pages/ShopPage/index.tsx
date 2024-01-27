@@ -7,10 +7,11 @@ import { Link } from "react-router-dom";
 import Item from "shared-components/core/Item";
 
 import styles from "./ShopPage.module.scss";
+import NavBar from "../../shared-components/layouts/NavBar";
 
 const ShopPage = () => {
   const { data: productData } = useQuery<GetCollectionQuery, GetCollectionQueryVariables>(GET_COLLECTION, {
-    variables: { collectionHandle: "shop-all" },
+    variables: { collectionHandle: "shop" },
   });
 
   if (!productData?.collection?.products) {
@@ -21,7 +22,8 @@ const ShopPage = () => {
   console.log(products);
 
   return (
-    <>
+    <div className={styles["shop-styled"]}>
+      <NavBar />
       <div className={classNames(styles["products"])}>
         {products.map((product) => (
           <Link to={`/product/${product.handle}`} key={product.handle}>
@@ -29,7 +31,7 @@ const ShopPage = () => {
           </Link>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

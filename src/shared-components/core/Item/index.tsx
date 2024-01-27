@@ -3,9 +3,9 @@ import { Product } from "@shopify/hydrogen-react/storefront-api-types";
 import classNames from "classnames";
 import { motion } from "framer-motion";
 
-import "lazysizes";
-
 import styles from "./Item.module.scss";
+// import paper from "../../../assets/merch_paper.png";
+import "lazysizes";
 
 interface Props {
   product: {
@@ -25,6 +25,7 @@ const Item: React.FC<Props> = ({ product, className }) => {
 
   return (
     <motion.div className={classNames(styles["item-container"], className)} transition={{ duration: 0.5 }}>
+      {/*<img src={paper} className={styles["paper-styled"]} />*/}
       <motion.img
         transition={{ duration: 1 }}
         src={`${src}&width=10`}
