@@ -1,0 +1,43 @@
+.navbar-styled {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 30px;
+    position: fixed;
+    width: 100vw;
+
+}
+
+.nav-item {
+    color: #1C1C1C;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+a:visited {
+    color: #1C1C1C;
+}
+
+.nav-left {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    justify-content: flex-start;
+    width: 40%;
+}
+
+.nav-right {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    justify-content: flex-end;
+    width: 40%;
+}
+
+.navbar-logo {
+    width: 100px;
+    display: flex;
+    justify-content: center;
+}
