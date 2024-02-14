@@ -14,10 +14,14 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-}
 
-a:visited {
-    color: #1C1C1C;
+    a:visited {
+        color: #1C1C1C;
+    }
+
+    @media only screen and (max-width: 768px) {
+        font-size: 18px;
+    }
 }
 
 .nav-left {
@@ -26,6 +30,10 @@ a:visited {
     gap: 50px;
     justify-content: flex-start;
     width: 40%;
+
+    @media only screen and (max-width: 768px) {
+        gap: 25px;
+    }
 }
 
 .nav-right {
@@ -34,6 +42,10 @@ a:visited {
     gap: 50px;
     justify-content: flex-end;
     width: 40%;
+
+    @media only screen and (max-width: 768px) {
+        gap: 25px;
+    }
 }
 
 .navbar-logo {
