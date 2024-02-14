@@ -4,7 +4,7 @@ import classNames from "classnames";
 import { motion } from "framer-motion";
 
 import styles from "./Item.module.scss";
-// import paper from "../../../assets/merch_paper.png";
+import paper from "../../../assets/merch_paper.png";
 import "lazysizes";
 
 interface Props {
@@ -25,14 +25,14 @@ const Item: React.FC<Props> = ({ product, className }) => {
 
   return (
     <motion.div className={classNames(styles["item-container"], className)} transition={{ duration: 0.5 }}>
-      {/*<img src={paper} className={styles["paper-styled"]} />*/}
+      <img src={paper} className={styles["paper-styled"]} alt="paper background" />
       <motion.img
         transition={{ duration: 1 }}
         src={`${src}&width=10`}
         className={classNames(styles["image"], "lazyload", "lazyloaded", {
           [styles["image--not-available"]]: !availableForSale,
         })}
-        alt="taikataikataika"
+        alt="bonquyquy"
         data-sizes="auto"
         data-srcset={`${src}&width=300 300w,
           ${src}&width=600 600w,
