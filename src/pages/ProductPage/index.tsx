@@ -26,24 +26,32 @@ const ProductView = () => {
 
   return (
     <div className={styles["product-styled"]}>
+      <div className={styles["product-background"]} />
       <NavBar />
-      <div className={styles["product-description"]}>
-        <p>{product.title}</p>
-        <p>{product.description}</p>
-      </div>
-      <div className={styles["product-images"]}>
-        {productImages.map((image, index) => (
-          <Image key={index} data={image} />
-        ))}
-      </div>
-      <div className={styles["product-price"]}>
-        <ProductPrice data={product} />
-        <select id="dropdown">
-          {productSizes.map((size) => (
-            <option value={size?.title}>{size?.title}</option>
+      <div className={styles["product-container"]}>
+        <div className={styles["product-description-container"]}>
+          <p>{product.title}</p>
+          <div
+            dangerouslySetInnerHTML={{ __html: product.descriptionHtml ?? "" }}
+            className={styles["product-description"]}
+          />
+        </div>
+        <div className={styles["product-images"]}>
+          {productImages.map((image, index) => (
+            <Image key={index} data={image} />
           ))}
-        </select>
-        <AddToCartButton variantId={selectedVariant?.id}>ADD TO CART</AddToCartButton>
+        </div>
+        <div className={styles["product-price-container"]}>
+          <ProductPrice data={product} />
+          <select id="dropdown" className={styles["select-size"]}>
+            {productSizes.map((size) => (
+              <option value={size?.title}>{size?.title}</option>
+            ))}
+          </select>
+          <AddToCartButton variantId={selectedVariant?.id} className={styles["add-to-cart-button"]}>
+            ADD TO CART
+          </AddToCartButton>
+        </div>
       </div>
     </div>
   );
