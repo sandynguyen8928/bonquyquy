@@ -13,6 +13,7 @@ import { GET_PRODUCT } from "queries/get-product";
 import { useParams } from "react-router-dom";
 
 import styles from "./ProductPage.module.scss";
+// import Footer from "../../shared-components/layouts/Footer/Footer";
 import NavBar from "../../shared-components/layouts/NavBar";
 
 const ProductView = () => {
@@ -53,6 +54,7 @@ const ProductView = () => {
           </AddToCartButton>
         </div>
       </div>
+      {/*<Footer />*/}
     </div>
   );
 };

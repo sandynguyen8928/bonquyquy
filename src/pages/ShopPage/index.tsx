@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import Item from "shared-components/core/Item";
 
 import styles from "./ShopPage.module.scss";
+import Footer from "../../shared-components/layouts/Footer/Footer";
 import NavBar from "../../shared-components/layouts/NavBar";
 
 const ShopPage = () => {
@@ -31,6 +32,7 @@ const ShopPage = () => {
           </Link>
         ))}
       </div>
+      <Footer />
     </div>
   );
 };
