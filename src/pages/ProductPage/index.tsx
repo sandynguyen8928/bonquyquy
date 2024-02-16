@@ -17,13 +17,18 @@ import styles from "./ProductPage.module.scss";
 import NavBar from "../../shared-components/layouts/NavBar";
 
 const ProductView = () => {
-  const { product, selectedVariant } = useProduct();
+  const { product, selectedVariant, setSelectedVariant } = useProduct();
   if (!product) {
     return <></>;
   }
 
   const productImages = flattenConnection(product.images);
   const productSizes = flattenConnection(product.variants);
+
+  const handleSelectedSize = (event: { target: { value: string | undefined } }) => {
+    const selectedSize = productSizes.find((size) => size?.title === event.target.value);
+    setSelectedVariant(selectedSize!);
+  };
 
   return (
     <div className={styles["product-styled"]}>
@@ -44,7 +49,7 @@ const ProductView = () => {
         </div>
         <div className={styles["product-price-container"]}>
           <ProductPrice data={product} />
-          <select id="dropdown" className={styles["select-size"]}>
+          <select id="dropdown" className={styles["select-size"]} onChange={handleSelectedSize}>
             {productSizes.map((size) => (
               <option value={size?.title}>{size?.title}</option>
             ))}
