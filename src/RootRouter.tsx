@@ -4,6 +4,7 @@ import { createBrowserRouter } from "react-router-dom";
 const ShopPage = lazy(() => import("pages/ShopPage"));
 const ProductPage = lazy(() => import("pages/ProductPage"));
 const HomePage = lazy(() => import("pages/HomePage"));
+const CartPage = lazy(() => import("pages/CartPage"));
 
 export const router = createBrowserRouter([
   {
@@ -17,5 +18,9 @@ export const router = createBrowserRouter([
   {
     path: "/product/:handle",
     element: <ProductPage />,
+  },
+  {
+    path: "/cart",
+    element: <CartPage />,
   },
 ]);

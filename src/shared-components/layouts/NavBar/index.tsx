@@ -35,7 +35,9 @@ const NavBar = () => {
             CONTACT
           </a>
         </div>
-        <div className={styles["nav-item"]}>CART</div>
+        <div className={styles["nav-item"]} onClick={() => navigateTo("/cart")}>
+          CART
+        </div>
       </div>
     </div>
   );
