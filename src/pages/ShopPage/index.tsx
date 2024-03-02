@@ -27,9 +27,11 @@ const ShopPage = () => {
       <NavBar />
       <div className={classNames(styles["products"])}>
         {products.map((product) => (
-          <Link to={`/product/${product.handle}`} key={product.handle}>
-            <Item product={product} />
-          </Link>
+          <div className={styles["item-styled"]}>
+            <Link to={`/product/${product.handle}`} key={product.handle}>
+              <Item product={product} />
+            </Link>
+          </div>
         ))}
       </div>
       <Footer />
