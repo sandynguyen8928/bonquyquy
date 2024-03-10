@@ -1,3 +1,22 @@
+.navbar-switch {
+    .navbar-styled {
+        display: flex;
+
+        @media only screen and (max-width: 800px) {
+            display: none;
+        }
+    }
+
+    .navbar-mobile {
+        display: none;
+
+        @media only screen and (max-width: 800px) {
+            display: flex;
+            position: fixed;
+        }
+    }
+}
+
 .navbar-styled {
     display: flex;
     flex-direction: row;
@@ -5,7 +24,6 @@
     padding: 30px;
     position: fixed;
     width: 100vw;
-
 }
 
 .nav-item {
@@ -54,4 +72,8 @@
     display: flex;
     justify-content: center;
     cursor: pointer;
+}
+
+.navbar-mobile {
+    z-index: 1;
 }

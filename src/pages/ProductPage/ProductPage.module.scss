@@ -21,6 +21,7 @@
     display: flex;
     justify-content: center;
     align-content: center;
+    width: 100%;
 }
 
 .product-description-container {
@@ -45,7 +46,8 @@
     width: 90%;
     max-width: 500px;
     padding-top: 150px;
-    z-index: 1;
+    z-index: 0;
+    position: relative;
 }
 
 .product-price-container {
