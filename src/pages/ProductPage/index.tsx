@@ -1,7 +1,6 @@
 import { useQuery } from "@apollo/client";
 import {
   AddToCartButton,
-  // BuyNowButton,
   Image,
   ProductPrice,
   ProductProvider,
@@ -13,7 +12,6 @@ import { GET_PRODUCT } from "queries/get-product";
 import { useParams } from "react-router-dom";
 
 import styles from "./ProductPage.module.scss";
-// import Footer from "../../shared-components/layouts/Footer/Footer";
 import NavBar from "../../shared-components/layouts/NavBar";
 
 const ProductView = () => {
@@ -34,7 +32,8 @@ const ProductView = () => {
     <div className={styles["product-styled"]}>
       <div className={styles["product-background"]} />
       <NavBar />
-      <div className={styles["product-container"]}>
+      {/* DESKTOP */}
+      <div className={styles["product-container"]} id="product-page-desktop">
         <div className={styles["product-description-container"]}>
           <p>{product.title}</p>
           <div
@@ -59,7 +58,34 @@ const ProductView = () => {
           </AddToCartButton>
         </div>
       </div>
-      {/*<Footer />*/}
+      {/* MOBILE */}
+      <div className={styles["product-mobile-container"]} id="product-page-mobile">
+        <div className={styles["product-images-mobile"]}>
+          {productImages.map((image, index) => (
+            <Image key={index} data={image} />
+          ))}
+        </div>
+        <div
+          dangerouslySetInnerHTML={{ __html: product.descriptionHtml ?? "" }}
+          className={styles["product-description-mobile"]}
+        />
+        <div className={styles["product-mobile-bottom"]}>
+          <div className={styles["product-description-container-mobile"]}>
+            <div className={styles["product-title-mobile"]}>{product.title}</div>
+            <ProductPrice data={product} className={styles["product-title-mobile"]} />
+          </div>
+          <div className={styles["product-price-container-mobile"]}>
+            <select id="dropdown" className={styles["select-size"]} onChange={handleSelectedSize}>
+              {productSizes.map((size) => (
+                <option value={size?.title}>{size?.title}</option>
+              ))}
+            </select>
+            <AddToCartButton variantId={selectedVariant?.id} className={styles["add-to-cart-button"]}>
+              ADD TO CART
+            </AddToCartButton>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
