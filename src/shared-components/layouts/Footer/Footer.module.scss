@@ -1,4 +1,8 @@
 .footer-styled {
     margin: 20px;
     font-weight: 600;
+
+    @media only screen and (max-width: 500px) {
+        font-size: 14px;
+    }
 }
