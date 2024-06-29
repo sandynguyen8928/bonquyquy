@@ -1,11 +1,26 @@
-.navbar-styled {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 30px;
+.navbar-switch {
+    z-index: 1;
     position: fixed;
-    width: 100vw;
 
+    .navbar-styled {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 30px;
+        width: 100vw;
+
+        @media only screen and (max-width: 800px) {
+            display: none;
+        }
+    }
+
+    .navbar-mobile {
+        display: none;
+
+        @media only screen and (max-width: 800px) {
+            display: flex;
+        }
+    }
 }
 
 .nav-item {
@@ -17,12 +32,41 @@
     cursor: pointer;
 
     a:visited {
-        color: #D9D9D9;
+        color: #D9D9D9;;
+    }
+
+    @media only screen and (max-width: 768px) {
+        font-size: 18px;
     }
 }
 
-.nav-section {
+.nav-left {
     display: flex;
     flex-direction: row;
     gap: 50px;
+    justify-content: flex-start;
+    width: 40%;
+
+    @media only screen and (max-width: 768px) {
+        gap: 25px;
+    }
+}
+
+.nav-right {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    justify-content: flex-end;
+    width: 40%;
+
+    @media only screen and (max-width: 768px) {
+        gap: 25px;
+    }
+}
+
+.navbar-logo {
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
 }

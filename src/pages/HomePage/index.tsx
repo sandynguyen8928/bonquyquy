@@ -6,8 +6,8 @@ const HomePage = () => {
   return (
     <div className={styles["landing-styled"]}>
       <NavBar />
-      <div className={styles["landing-logo"]}>
-        <img src={logo} alt="bonquyquy logo" />
+      <div className={styles["landing-logo-container"]}>
+        <img src={logo} alt="bonquyquy logo" className={styles["landing-logo"]} />
       </div>
     </div>
   );

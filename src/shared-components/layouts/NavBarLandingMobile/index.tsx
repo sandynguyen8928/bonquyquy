@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import styles from "./NavBarMobile.module.scss";
-import logo from "../../../assets/logo.png";
+import styles from "./NavBarLandingMobile.module.scss";
 
-const NavBarMobile = () => {
+const NavBarLandingMobile = () => {
   const navigate = useNavigate();
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
 
@@ -74,12 +73,6 @@ const NavBarMobile = () => {
         <div className={styles["x-button-container"]} onClick={toggleHamburger} id="x-button">
           <div className={styles["x-button"]} />
         </div>
-        <img
-          src={logo}
-          className={styles["navbar-logo"]}
-          alt="bonquyquy logo"
-          onClick={() => navigateTo("/")}
-        />
         <div className={styles["cart"]} onClick={() => navigateTo("/cart")}>
           <div>CART</div>
         </div>
@@ -112,4 +105,4 @@ const NavBarMobile = () => {
     </div>
   );
 };
-export default NavBarMobile;
+export default NavBarLandingMobile;

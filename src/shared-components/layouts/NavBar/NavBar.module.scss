@@ -1,6 +1,13 @@
 .navbar-switch {
+    z-index: 1;
+    position: fixed;
+
     .navbar-styled {
         display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 30px;
+        width: 100vw;
 
         @media only screen and (max-width: 800px) {
             display: none;
@@ -12,18 +19,8 @@
 
         @media only screen and (max-width: 800px) {
             display: flex;
-            position: fixed;
         }
     }
-}
-
-.navbar-styled {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 30px;
-    position: fixed;
-    width: 100vw;
 }
 
 .nav-item {
@@ -72,8 +69,4 @@
     display: flex;
     justify-content: center;
     cursor: pointer;
-}
-
-.navbar-mobile {
-    z-index: 1;
 }

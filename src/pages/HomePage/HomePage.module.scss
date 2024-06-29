@@ -10,10 +10,15 @@
     flex: auto;
 }
 
-.landing-logo {
+.landing-logo-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
     width: 100%;
+}
+
+.landing-logo {
+    width: 50%;
+    max-width: 400px;
 }
