@@ -8,13 +8,16 @@ const NavBarMobile = () => {
   const navigate = useNavigate();
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
 
-  function navigateTo(page: string) {
+  const navigateTo = (page: string) => {
     navigate(page);
     toggleHamburger();
-  }
+  };
 
   const toggleHamburger = () => {
-    setHamburgerOpen(!hamburgerOpen);
+    setHamburgerOpen((prev) => !prev);
+  };
+
+  useEffect(() => {
     const xButton = document.getElementById("x-button")!;
     const hamburger = document.getElementById("hamburger")!;
     const navBarShow = document.getElementById("navbarshow")!;
@@ -31,37 +34,14 @@ const NavBarMobile = () => {
       navBarShow.style.display = "none";
       navBarHeader.style.backdropFilter = "none";
     }
+  }, [hamburgerOpen]);
+
+  const toggleVisibility = (elementIds: string[]) => {
+    elementIds.forEach((id) => {
+      const element = document.getElementById(id)!;
+      element.style.display = element.style.display === "flex" ? "none" : "flex";
+    });
   };
-
-  const showTattoos = () => {
-    const flashes = document.getElementById("flashes")!;
-    const wants = document.getElementById("wants")!;
-
-    if (flashes.style.display == "flex") {
-      flashes.style.display = "none";
-      wants.style.display = "none";
-    } else {
-      flashes.style.display = "flex";
-      wants.style.display = "flex";
-    }
-  };
-
-  const showAbout = () => {
-    const quy = document.getElementById("quy")!;
-    const order = document.getElementById("order")!;
-
-    if (quy.style.display == "flex") {
-      quy.style.display = "none";
-      order.style.display = "none";
-    } else {
-      quy.style.display = "flex";
-      order.style.display = "flex";
-    }
-  };
-
-  useEffect(() => {
-    toggleHamburger();
-  }, []);
 
   return (
     <div className={styles["navbar-mobile-styled"]}>
@@ -89,7 +69,10 @@ const NavBarMobile = () => {
           <div className={styles["navbar-mobile-item"]} onClick={() => navigateTo("/merch")}>
             MERCH
           </div>
-          <div className={styles["navbar-mobile-item"]} onClick={showTattoos}>
+          <div
+            className={styles["navbar-mobile-item"]}
+            onClick={() => toggleVisibility(["flashes", "wants"])}
+          >
             TATTOO
           </div>
           <div className={styles["navbar-mobile-subitem"]} onClick={() => navigateTo("/tattoo")} id="flashes">
@@ -98,7 +81,7 @@ const NavBarMobile = () => {
           <div className={styles["navbar-mobile-subitem"]} onClick={() => navigateTo("/tattoo")} id="wants">
             WANT TO DO
           </div>
-          <div className={styles["navbar-mobile-item"]} onClick={showAbout}>
+          <div className={styles["navbar-mobile-item"]} onClick={() => toggleVisibility(["quy", "order"])}>
             ABOUT
           </div>
           <div className={styles["navbar-mobile-subitem"]} onClick={() => navigateTo("/about")} id="quy">
@@ -112,4 +95,5 @@ const NavBarMobile = () => {
     </div>
   );
 };
+
 export default NavBarMobile;
